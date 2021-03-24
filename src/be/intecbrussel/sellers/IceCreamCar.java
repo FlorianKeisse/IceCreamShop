@@ -75,7 +75,7 @@ public class IceCreamCar implements IceCreamSeller {
     private Magnum prepareMagnum(Magnum.MagnumType magnumType) throws NoMoreIceCreamException {
         if (stock.getMagni() < 1) {
             throw new NoMoreIceCreamException("You're all out of Mangi oh noo, you jester D:<");
-        }else {
+        } else {
             profit += priceList.getMagnumPrice(magnumType);
             stock.setMagni(stock.getMagni() - 1);
             return new Magnum();
@@ -86,8 +86,8 @@ public class IceCreamCar implements IceCreamSeller {
     public Magnum orderMagnum(Magnum.MagnumType magnumType) {
         Magnum preparedMagnum = null;
         try {
-            preparedMagnum=prepareMagnum(magnumType);
-        }catch (NoMoreIceCreamException noMoreIceCreamException){
+            preparedMagnum = prepareMagnum(magnumType);
+        } catch (NoMoreIceCreamException noMoreIceCreamException) {
             noMoreIceCreamException.printStackTrace();
         }
         return preparedMagnum;

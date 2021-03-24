@@ -22,9 +22,10 @@ public class Magnum implements IEatable {
 
 
     }
+
     @Override
     public void eat() {
-        System.out.println("You are eating a yummy magnum with: "+(getMagnumType()) + " Flavor");
+        System.out.println("You are eating a yummy magnum with: " + (getMagnumType()) + " Flavor");
     }
 
     public MagnumType getMagnumType() {

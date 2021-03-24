@@ -48,6 +48,5 @@ public class IceCreamAppV2 {
 //        System.out.println("Stock left on the balls: " + stock.getBalls());
 
 
-
     }
 }

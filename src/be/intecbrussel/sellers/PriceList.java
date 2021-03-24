@@ -1,6 +1,6 @@
 package be.intecbrussel.sellers;
 
-import be.intecbrussel.eatables.*;
+import be.intecbrussel.eatables.Magnum;
 
 public class PriceList {
 
@@ -13,14 +13,14 @@ public class PriceList {
         ballPrice = 1;
         rocketPrice = 1;
         magnumStandardPrice = 1.1;
-        System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n",ballPrice,rocketPrice, magnumStandardPrice);
+        System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n", ballPrice, rocketPrice, magnumStandardPrice);
     }
 
     public PriceList(double ballPrice, double rocketPrice, double magnumStandardPrice) {
-      this.rocketPrice = rocketPrice;
-      this.ballPrice = ballPrice;
-      this.magnumStandardPrice = magnumStandardPrice;
-        System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n",ballPrice,rocketPrice, magnumStandardPrice);
+        this.rocketPrice = rocketPrice;
+        this.ballPrice = ballPrice;
+        this.magnumStandardPrice = magnumStandardPrice;
+        System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n", ballPrice, rocketPrice, magnumStandardPrice);
 
     }
 
@@ -51,8 +51,8 @@ public class PriceList {
         this.magnumStandardPrice = magnumStandardPrice;
     }
 
-    private void printPriceList(){
-        System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n",ballPrice,rocketPrice, magnumStandardPrice);
+    private void printPriceList() {
+        System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n", ballPrice, rocketPrice, magnumStandardPrice);
 
     }
 }

@@ -1,6 +1,6 @@
 package be.intecbrussel.icexception;
 
-public class NoMoreIceCreamException extends Exception{
+public class NoMoreIceCreamException extends Exception {
 
     public NoMoreIceCreamException() {
     }

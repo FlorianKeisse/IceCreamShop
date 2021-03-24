@@ -15,18 +15,18 @@ public class IceCreamApp {
         IceCreamSalon iceCreamSalon = new IceCreamSalon(priceList);
         IceCreamSeller iceCreamSeller = iceCreamSalon;
 
-        IceRocket iceRocket =iceCreamSalon.orderIceRocket();
+        IceRocket iceRocket = iceCreamSalon.orderIceRocket();
 
         Cone.Flavor[] flavors1 = {Cone.Flavor.CHOCOLATE, Cone.Flavor.VANILLA};
         Cone cone = iceCreamSalon.orderCone(flavors1);
 
         Magnum magnum = iceCreamSalon.orderMagnum(Magnum.MagnumType.BLACKCHOCOLATE);
 
-        IEatable [] eatables = {iceRocket,cone,magnum};
+        IEatable[] eatables = {iceRocket, cone, magnum};
         for (int i = 0; i < eatables.length; i++) {
             eatables[i].eat();
         }
-        System.out.println("Total profit of the IceCream Seller: "+iceCreamSeller.getProfit() + " Euros or whatever");
+        System.out.println("Total profit of the IceCream Seller: " + iceCreamSeller.getProfit() + " Euros or whatever");
 
     }
 }

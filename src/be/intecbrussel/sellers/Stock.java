@@ -2,10 +2,10 @@ package be.intecbrussel.sellers;
 
 public class Stock {
 
-    private int iceRockets ;
-    private int cones ;
-    private int balls ;
-    private int magni ;
+    private int iceRockets;
+    private int cones;
+    private int balls;
+    private int magni;
 
     public int getIceRockets() {
         return iceRockets;
