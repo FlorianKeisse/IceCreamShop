@@ -23,40 +23,73 @@ public class IceCreamCar implements IceCreamSeller {
 
     @Override
     public Cone orderCone(Cone.Flavor[] flavors) {
-        int stockBalls = stock.getBalls();
-        int stockCones = stock.getCones();
+
+        Cone preparedCone = null;
         try {
-            if (stockBalls < flavors.length || stockCones < 1) {
-                throw new NoMoreIceCreamException("You're out of stock on the cones mate or balls whatever.");
-            } else {
-                profit += priceList.getBallPrice() * flavors.length;
-                stock.setCones(stock.getCones() - 1);
-                stock.setBalls(stock.getBalls() - flavors.length);
-                return prepareCone(flavors);
-            }
+            preparedCone = prepareCone(flavors);
         } catch (NoMoreIceCreamException noMoreIceCreamException) {
             noMoreIceCreamException.printStackTrace();
         }
-        return null;
+
+        for (int i = 0; i < flavors.length; i++) {
+            profit += priceList.getBallPrice();
+        }
+
+        return preparedCone;
 
     }
 
-    private Cone prepareCone(Cone.Flavor[] flavors) {
-        return new Cone(flavors);
+    private Cone prepareCone(Cone.Flavor[] flavors) throws NoMoreIceCreamException {
+
+        if (stock.getBalls() < flavors.length || stock.getCones() < 1) {
+            throw new NoMoreIceCreamException("You're out of stock on the cones mate or balls whatever.");
+        } else {
+            profit += priceList.getBallPrice() * flavors.length;
+            stock.setCones(stock.getCones() - 1);
+            stock.setBalls(stock.getBalls() - flavors.length);
+            return new Cone(flavors);
+        }
     }
 
     @Override
     public IceRocket orderIceRocket() {
-        profit += priceList.getRocketPrice();
-        IceRocket iceRocket = new IceRocket();
+        IceRocket preparedIceRockets = null;
+        try {
+            preparedIceRockets = prepareIceRocket();
+        } catch (NoMoreIceCreamException noMoreIceCreamException) {
+            noMoreIceCreamException.printStackTrace();
+        }
+        return preparedIceRockets;
+    }
 
-        return iceRocket;
+    private IceRocket prepareIceRocket() throws NoMoreIceCreamException {
+        if (stock.getIceRockets() < 1) {
+            throw new NoMoreIceCreamException("You're out of IceRockets, surely you jest");
+        } else {
+            profit += priceList.getRocketPrice();
+            stock.setIceRockets(stock.getIceRockets() - 1);
+            return new IceRocket();
+        }
+    }
+
+    private Magnum prepareMagnum(Magnum.MagnumType magnumType) throws NoMoreIceCreamException {
+        if (stock.getMagni() < 1) {
+            throw new NoMoreIceCreamException("You're all out of Mangi oh noo, you jester D:<");
+        }else {
+            profit += priceList.getMagnumPrice(magnumType);
+            stock.setMagni(stock.getMagni() - 1);
+            return new Magnum();
+        }
     }
 
     @Override
     public Magnum orderMagnum(Magnum.MagnumType magnumType) {
-        Magnum magnum = new Magnum(magnumType);
-        profit += priceList.getMagnumPrice(magnumType);
-        return magnum;
+        Magnum preparedMagnum = null;
+        try {
+            preparedMagnum=prepareMagnum(magnumType);
+        }catch (NoMoreIceCreamException noMoreIceCreamException){
+            noMoreIceCreamException.printStackTrace();
+        }
+        return preparedMagnum;
     }
 }
