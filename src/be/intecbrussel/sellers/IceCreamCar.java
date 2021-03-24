@@ -31,10 +31,6 @@ public class IceCreamCar implements IceCreamSeller {
             noMoreIceCreamException.printStackTrace();
         }
 
-        for (int i = 0; i < flavors.length; i++) {
-            profit += priceList.getBallPrice();
-        }
-
         return preparedCone;
 
     }
