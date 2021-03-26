@@ -15,6 +15,9 @@ public class IceCreamApp {
         IceCreamSalon iceCreamSalon = new IceCreamSalon(priceList);
         IceCreamSeller iceCreamSeller = iceCreamSalon;
 
+        // TODO: 
+        // iceCreamSeller seller = new IceCreamSalon(priceList);
+
         IceRocket iceRocket = iceCreamSalon.orderIceRocket();
 
         Cone.Flavor[] flavors1 = {Cone.Flavor.CHOCOLATE, Cone.Flavor.VANILLA};
@@ -26,6 +29,9 @@ public class IceCreamApp {
         for (int i = 0; i < eatables.length; i++) {
             eatables[i].eat();
         }
+
+        // TODO: message formatter :)
+
         System.out.println("Total profit of the IceCream Seller: " + iceCreamSeller.getProfit() + " Euros or whatever");
 
     }

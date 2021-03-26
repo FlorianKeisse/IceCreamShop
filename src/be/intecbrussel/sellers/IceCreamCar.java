@@ -22,7 +22,7 @@ public class IceCreamCar implements IceCreamSeller {
     }
 
     @Override
-    public Cone orderCone(Cone.Flavor[] flavors) {
+    public Cone orderCone(Cone.Flavor[] flavors) throws NoMoreIceCreamException {
 
         Cone preparedCone = null;
         try {
@@ -37,18 +37,19 @@ public class IceCreamCar implements IceCreamSeller {
 
     private Cone prepareCone(Cone.Flavor[] flavors) throws NoMoreIceCreamException {
 
-        if (stock.getBalls() < flavors.length || stock.getCones() < 1) {
+        if (stock.getBalls() < flavors.length || stock.getCones() < 1) 
             throw new NoMoreIceCreamException("You're out of stock on the cones mate or balls whatever.");
-        } else {
-            profit += priceList.getBallPrice() * flavors.length;
-            stock.setCones(stock.getCones() - 1);
-            stock.setBalls(stock.getBalls() - flavors.length);
-            return new Cone(flavors);
-        }
+
+    
+        profit += priceList.getBallPrice() * flavors.length;
+        stock.setCones(stock.getCones() - 1);
+        stock.setBalls(stock.getBalls() - flavors.length);
+
+        return new Cone(flavors);
     }
 
     @Override
-    public IceRocket orderIceRocket() {
+    public IceRocket orderIceRocket() throws NoMoreIceCreamException {
         IceRocket preparedIceRockets = null;
         try {
             preparedIceRockets = prepareIceRocket();
@@ -59,6 +60,8 @@ public class IceCreamCar implements IceCreamSeller {
     }
 
     private IceRocket prepareIceRocket() throws NoMoreIceCreamException {
+            // TODO: simplify IF ELSE 
+
         if (stock.getIceRockets() < 1) {
             throw new NoMoreIceCreamException("You're out of IceRockets, surely you jest");
         } else {
@@ -69,6 +72,9 @@ public class IceCreamCar implements IceCreamSeller {
     }
 
     private Magnum prepareMagnum(Magnum.MagnumType magnumType) throws NoMoreIceCreamException {
+
+          // TODO: simplify IF ELSE 
+
         if (stock.getMagni() < 1) {
             throw new NoMoreIceCreamException("You're all out of Mangi oh noo, you jester D:<");
         } else {
@@ -79,7 +85,7 @@ public class IceCreamCar implements IceCreamSeller {
     }
 
     @Override
-    public Magnum orderMagnum(Magnum.MagnumType magnumType) {
+    public Magnum orderMagnum(Magnum.MagnumType magnumType) throws NoMoreIceCreamException {
         Magnum preparedMagnum = null;
         try {
             preparedMagnum = prepareMagnum(magnumType);

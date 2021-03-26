@@ -2,6 +2,13 @@ package be.intecbrussel.eatables;
 
 public class Magnum implements IEatable {
 
+    public enum MagnumType {
+        MILKCHOCOLATE, // x1
+        WHITECHOCOLATE, // x1
+        BLACKCHOCOLATE, // x1
+        ALPINENUTS, // x1.5
+        ROMANTICSTRAWBERRIES; // x1
+    }
 
     private MagnumType type;
 
@@ -10,17 +17,6 @@ public class Magnum implements IEatable {
 
     public Magnum(MagnumType type) {
         this.type = type;
-    }
-
-    public enum MagnumType {
-        MILKCHOCOLATE, // x1
-        WHITECHOCOLATE, // x1
-        BLACKCHOCOLATE, // x1
-        ALPINENUTS, // x1.5
-
-        ROMANTICSTRAWBERRIES; // x1
-
-
     }
 
     @Override

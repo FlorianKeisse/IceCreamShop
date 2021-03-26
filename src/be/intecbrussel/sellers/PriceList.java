@@ -13,6 +13,8 @@ public class PriceList {
         ballPrice = 1;
         rocketPrice = 1;
         magnumStandardPrice = 1.1;
+
+        // TODO: it is not advised .. 
         System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n", ballPrice, rocketPrice, magnumStandardPrice);
     }
 
@@ -20,6 +22,8 @@ public class PriceList {
         this.rocketPrice = rocketPrice;
         this.ballPrice = ballPrice;
         this.magnumStandardPrice = magnumStandardPrice;
+
+        // TODO: it is not advised ..
         System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n", ballPrice, rocketPrice, magnumStandardPrice);
 
     }
@@ -53,6 +57,9 @@ public class PriceList {
 
     private void printPriceList() {
         System.out.printf("Bol prijs: %s%nRaket prijs:  %s%nMagnum Normal prijs: %s%n%n", ballPrice, rocketPrice, magnumStandardPrice);
+
+        // TODO: MessageFormatter formatter = new MessageFormatter();
+        // formatter.format("Bol prijs: {0}", ballPrice);
 
     }
 }
